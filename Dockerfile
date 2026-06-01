@@ -1,5 +1,5 @@
 
-FROM python:3.11-alpine AS builder
+FROM python:3.13-alpine AS builder
 
 WORKDIR /build
 
@@ -12,7 +12,7 @@ RUN pip install --upgrade pip setuptools
 RUN pip install --user --no-cache-dir -r requirements.txt
 
 
-FROM python:3.11-alpine
+FROM python:3.13-alpine
 
 # Metadane zgodne ze standardem OCI
 LABEL org.opencontainers.image.authors="Jakub Janusz"
