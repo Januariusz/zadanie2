@@ -6,6 +6,8 @@ WORKDIR /build
 # Optymalizacja cache: Kopiujemy najpierw TYLKO plik requirements.txt..
 COPY requirements.txt .
 
+RUN pip install --upgrade pip setuptools
+
 # Instalujemy pakiety w osobnym katalogu lokalnym (--user)
 RUN pip install --user --no-cache-dir -r requirements.txt
 
